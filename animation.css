@@ -1,0 +1,85 @@
+div{
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px dotted #ddd;
+}
+.rotate, .shake, .bigger, .rightToLeft{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    text-align: center;
+    background: red;
+}
+
+
+
+.rotate{
+    animation: rotate 15s linear infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.shake{
+    animation: shake 1s linear infinite;
+}
+@keyframes shake {
+    0% {
+        transform: scale(1);
+        
+    }
+    10%, 20%{
+        transform: scale3d(.9,.9,.9) rotate(-3deg) ;
+    }
+    30%, 50%, 70%, 90%{
+        transform: scale3d(1.1,1.1,1.1) rotate(3deg);
+    }
+    40%, 60%, 80%{
+        transform: scale3d(1.1,1.1,1.1) rotate(-3deg);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.bigger{
+    animation: bigger 1s linear infinite;
+}
+@keyframes bigger {
+    0% {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+#rightToLeft{
+    position: relative;
+}
+.rightToLeft{
+    position: absolute;
+}
+.rightToLeft{
+    animation: rightToLeft .5s ease;
+}
+@keyframes rightToLeft {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
